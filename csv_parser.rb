@@ -1,3 +1,15 @@
+=begin
+実行例-> $ ruby csv_parser.rb file.txt
+説明 : 
+  CSVの解析処理を行う
+  - CSVはタブ区切り
+  - 1列目 : メッセージ,  2列目　: 種類, 3列目 : 処理時間
+  - 同じ種類毎に処理時間をまとめて合計値を出力する
+  - 処理時間の取得期間はメッセージの内容から決める
+      START_MSG 取得 ～ WAITDONE_MSG取得後の、最初のSTOP_MSG取得までの期間
+  - 状態に応じて、無視するメッセージはignore? に登録する
+  - START～STOPが繰り返されるたびに、合計値の出力、クリアを行う
+=end
 class CsvParser
   STOP = 0
   START = 1
